@@ -8,6 +8,8 @@ neighbor_geo="http://data.insideairbnb.com/united-states/ny/new-york-city/2019-0
 data_dir="data"
 targets=($listings $calendar $review $neighbor $neighbor_geo)
 
+mkdir -p $data_dir
+
 for i in "${targets[@]}";
 do
     name=$(echo $i | rev | cut -d/ -f1 | rev)
@@ -15,9 +17,9 @@ do
     wget $i -O $data_dir/$name
 done
 
-echo gunzipping...
-for file in "$data_dir"/*; do
-  if [ ${file: -3} == ".gz" ]; then
-    gunzip $file
-  fi
-done
+# echo gunzipping...
+# for file in "$data_dir"/*; do
+#   if [ ${file: -3} == ".gz" ]; then
+#     gunzip $file
+#   fi
+# done
