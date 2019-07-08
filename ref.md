@@ -1,0 +1,4 @@
+- business model canvas : https://vizologi.com/business-strategy-canvas/airbnb-business-model-canvas/
+- https://medium.com/airbnb-engineering/how-we-deliver-insights-to-hosts-7d836520a38
+- Korean Market : https://brunch.co.kr/@cysstory/112
+- Y : https://ppss.kr/archives/120110
