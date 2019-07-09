@@ -1,0 +1,19 @@
+[
+  {
+    "Classification": "spark-hive-site",
+    "Properties": {
+      "hive.metastore.client.factory.class": "com.amazonaws.glue.catalog.metastore.AWSGlueDataCatalogHiveClientFactory"
+    }
+  },
+  {
+     "Classification": "spark-env",
+     "Configurations": [
+       {
+         "Classification": "export",
+         "Properties": {
+            "PYSPARK_PYTHON": "/usr/bin/python3"
+          }
+       }
+    ]
+  },
+]

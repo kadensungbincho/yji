@@ -4,6 +4,9 @@
 
 - TODO:
     - 1 : Data Preprocessing with Pyspark(HDBScan, H3), AWS EMR Command, Save to DB
+        - H3 : Add 100m, 500m, 1000m, 2000m Count
+        - DBScan : Try DBScan and Label, add region competitors Count
+        - Slice Data : 
     - 2 : Set up API Service with Python, Docker
     - 3 : Web Service (Customized Market Analysis, Broad Overview - https://github.com/keplergl/kepler.gl)
     - 4 : Wrapup & Add more
