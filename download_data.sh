@@ -24,7 +24,6 @@ mkdir -p $data_dir
 #   fi
 # done
 
-
 # echo parqueting...
 # for file in "$data_dir"/*; do
 #   if [ ${file: -4} == ".csv" ]; then
