@@ -7,6 +7,8 @@ from h3 import h3
 from pyspark.sql import SparkSession
 from pyspark.sql.types import DoubleType, IntegerType, StringType, StructType
 
+from config import Production as config
+
 
 DATE_FORMAT = '%Y-%m-%d'
 
@@ -177,4 +179,12 @@ for _df, _key in zip(dfs, keys):
 left_df = left_df.withColumn('dt', F.lit(execution_date))
 
 # Save To S3
-left_df.repartition(10).write.parquet(f's3://yji/db/listings_info/dt={execution_date}')
+left_df.repartition(10).write.parquet(f's3://yji/db/listings_info/dt={execution_date}', mode='overwrite')
+
+# Save To RDS
+left_df.repartition(10).write.format('jdbc').options(
+    url=config.URL,
+    driver='com.mysql.jdbc.Driver',
+    dbtable='listings_info',
+    user=config.USERNAME,
+    password=config.PASSWORD).mode('append').save()

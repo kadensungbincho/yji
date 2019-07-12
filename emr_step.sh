@@ -1,0 +1,1 @@
+/usr/lib/spark/bin/spark-submit --deploy-mode client --packages mysql:mysql-connector-java:5.1.39 --py-files s3://yji/preprocess.zip,s3://yji/config.py s3://yji/preprocess.py 2019-07-13
