@@ -31,7 +31,8 @@ class HelloWorld(Resource):
 
     def get(self, host_id):
         if re.match(r'^\d+$', host_id):
-            _t = text(f"SELECT * FROM listings_info WHERE host_id = {host_id}")
+            _t = text(f"SELECT * FROM listings_info WHERE host_id = {host_id}"
+                       " ORDER BY dt DESC LIMIT 1")
             first_row = None
             try:
                 res = self._engine.execute(_t)

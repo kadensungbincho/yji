@@ -113,7 +113,7 @@ def geo_to_h3(lat, lon, resolution):
 
 udf_geo_to_h3 = F.udf(geo_to_h3, StringType())
 
-# 4, 22
+# 4, 22 km
 # 6, 3
 # 7, 1.2
 # 9, 0.17
